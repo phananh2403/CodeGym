@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Điểu chỉnh font,căn lề,kiểu chữ,v...v... (CSS)-->
+    <style>
+        .center-text {
+            text-align: center;
+            width: 400px;
+            height: 250px;
+            border: solid 10px lightblue;
+        }
+        .table{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="simpleform.html" method="GET" class="center-text">
+        <h3 style="background-color: orange;"><p style="color: aliceblue;">SỞ THÍCH CỦA BẠN</p></h3>
+        <table>
+            <tr>
+                <td style="color: blue;">Họ và tên</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Email</td>
+                <td>
+                    <input type="email">
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Sở thích</td>
+                <td>
+                    <input type="checkbox"><span style="color: red;">Thể thao</span>
+                    <input type="checkbox"><span style="color: red;">Âm nhạc</span>
+                    <input type="checkbox"><span style="color: red;">Đọc sách</span><br/>
+                    <input type="checkbox"><span style="color: red;">Lướt web</span>
+                    <input type="checkbox"><span style="color: red;">Chơi game</span>
+                    <input type="checkbox"><span style="color: red;">Điện ảnh</span><br/>
+                    <input type="checkbox"><span style="color: red;">Du lịch</span>
+                    
+                    
+                </td>
+            </tr>
+        </table>
+        <p><input type="button" name="submit" value="Gửi thông tin"> <input type="button" name="reset" value="Nhập lại"></p>
+        <!-- xài table cho gọn -->
+    </form>
+</body>
+</html>
