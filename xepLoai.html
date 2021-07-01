@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let score = prompt("Import student'score: ")
+        switch(true){
+            case (score <= 10 && score >=9):
+                console.log("Excellent");
+                break;
+
+            case (score >= 8):
+                console.log("Great");
+                break;
+
+            case (score >= 7):
+                console.log("Rather");
+                break;
+            
+            case (score >= 5):
+                console.log("Medium");
+                break;
+
+            case (score < 5 && score >= 0):
+                console.log("Medium");
+                break;
+                
+            default:
+                console.log("Error");
+        }
+    </script>
+</body>
+</html>
