@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements</title>
+</head>
+<body>
+    <script>
+        /*
+        // 1 check if a is divisible by b
+        let a = parseInt(prompt("Import a: "));
+        let b = parseInt(prompt("Import b: "));
+        if (a % b == 0)
+            console.log('a divisible b');
+        else
+            console.log('a not divisible b');
+
+        */
+
+        /*
+        // 2 check student's age
+        let age = prompt("Enter the student's age: ");
+        if (age > 0 && age <= 15)
+            console.log("not a 10th grader");
+        */
+        
+        /*
+        // 3 check number
+        let num = parseInt(prompt("Enter the number: "));
+        if (num > 0)
+            console.log("Number > 0");
+        else if (num < 0)
+            console.log("Number < 0");
+        else
+            console.log("Number is 0");
+        */
+
+        /*
+        // 4
+        let a = parseInt(prompt("Enter first number: "));
+        let b = parseInt(prompt("Enter second number: "));
+        let c = parseInt(prompt("Enter third number: "));
+
+        let max = (a > b && a > c) ? a : (b > c ? b : c);
+        console.log("Max is: " + max);
+        */
+        
+        /*
+        // 5
+        let score = prompt("Import student'score: ")
+        switch(true){
+            case (score <= 10 && score >=9):
+                console.log("Excellent");
+                break;
+
+            case (score >= 8):
+                console.log("Great");
+                break;
+
+            case (score >= 7):
+                console.log("Rather");
+                break;
+            
+            case (score >= 5):
+                console.log("Medium");
+                break;
+
+            case (score < 5 && score >= 0):
+                console.log("weak");
+                break;
+                
+            default:
+                console.log("Error");
+        }
+        */
+
+        /*
+        // 6
+        // Cửa hàng của bạn nhận gửi bán sản phẩm cho một công ty khác 
+        // và sau mỗi tháng bạn cần tính toán số tiền hoa hồng bạn nhận được.
+        // Với mức hoa hồng theo doanh số bán hàng như sau:
+        // 5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.
+        // 10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.
+        // 20 % nếu tổng doanh số là lớn hơn 300 triệu. 
+
+        let sales = parseInt(prompt("Enter sales: "))
+        let commission = parseInt();
+        if (sales <= 100000000){
+            console.log("With" + sales + "then");
+            commission = sales * 5 / 100;
+            console.log("Commission is: " + commission);
+        }
+        if (sales <= 300000000){
+            console.log("With" + sales + "then");
+            commission = sales * 10 / 100;
+            console.log("Commission is: " + commission);
+        }
+        if (sales > 300000000){
+            console.log("With" + sales + "then");
+            commission = sales * 20 / 100;
+            console.log("Commission is: " + commission);
+        }   
+        */
+
+        // 7 
+        /* tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:
+        Phí thuê bao bắt buộc là 25 nghìn.
+        600 đồng cho mỗi gọi của 50 phút đầu tiên.
+        400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+        200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên. */
+
+        const fixedCharge = 25000;
+        var fee = 0;
+        let minutes = parseInt("Enter the number of minutes used: ");
+        var sum = parseInt;
+        if (minutes > 200){
+            fee = (minutes - 200) * 200 + 150 * 400 + 50 * 600;
+            sum = 0.01 * fee + fixedCharge;
+            console.log("Number of minutes used:" + minutes + "and fee is" + fee);
+        }
+        else if (minutes > 50){
+            fee = (minutes - 50) * 400 + 50 * 600;
+            sum = 0.01 * fee + fixedCharge;
+            console.log("Number of minutes used:" + minutes + "and fee is" + fee);
+        }
+        else{
+            fee = minutes * 600;
+            sum = 0.01 * fee + fixedCharge;
+            console.log("Number of minutes used:" + minutes + "and fee is" + fee);
+        }  
+    </script>
+</body>
+</html>
