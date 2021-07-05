@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Loops</h2>
+    <p id="demo"></p><!--cho id là demo để quy định kích cỡ của text và gọi ra (dòng 18)-->
+    <script>
+        /*
+        let text = "";
+        let i;
+        for (i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";//gán text = The number is ...
+        }
+        document.getElementById("demo").innerHTML = text;//in ra màn hình text
+        */
+        let num = prompt("Enter your number: ");
+       let total = 0;
+       for (let i = 0; i < num; i++) {
+           total += i;
+           
+       }
+       console.log(total);
+    </script>
+</body>
+</html>
