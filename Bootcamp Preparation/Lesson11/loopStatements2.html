@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        //Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+        const number = parseInt(prompt('Enter the number of terms: '));
+            let n1 = 0, n2 = 1, nextTerm;
+
+            console.log('Fibonacci Series:');
+
+            for (let i = 1; i <= number; i++) {
+                console.log(n1);
+                nextTerm = n1 + n2;
+                n1 = n2;
+                n2 = nextTerm;
+                
+            }
+        */
+        /*
+        // tinh n giai thua
+        var n = parseInt(prompt("Nhap gia tri n"));
+        function giaithua(){
+            var giaithua = 1;
+            for(var i = 1;i<=n;i++){
+                giaithua *= i;
+            }
+            console.log("Giai thua = " + giaithua);
+        }
+        giaithua(n);
+        */
+        /*
+        // in tam giac
+        
+        var n = parseInt(prompt("Nhập n: "));  //n = 7  
+        for(var i = 0; i<n;i++)
+        {
+	        for(var j = 0;j<i-1;j++)
+	        {
+                document.write('*');
+            }
+            document.write('<br/>');
+        }
+        */
+        /*
+        //in tam giác ngược
+        var n = parseInt(prompt("Nhập n: "));  //n = 7  
+        for(var i = n; i>0;i--)
+        {
+	        for(var j =i-1;j>0;j--)
+	        {
+                document.write('*');
+            }
+            document.write('<br/>');
+        }
+        */
+        /*
+        //in tam giác bên phải (chưa đúng)
+        var n = parseInt(prompt("Nhập n: "));  //n = 7  
+        for(var i = 0; i<n;i++)
+        {
+	        for(var j = 0;j<i;j++)
+	        
+                document.write('  ');
+            
+            for(var j=i;j<n;j++)
+                document.write(' *');
+            
+            document.write('<br/>');
+        }
+        */
+        
+        var x = parseInt(prompt("Nhap x: "));
+
+        var y = parseInt(prompt("Nhap y: "));
+        for(var i=1;i<=x;i++){
+            for(var j=1;j<=y;j++){
+                if(i == 1 || j == 1 || i == x || j == y){
+                    document.write('*');
+                }
+                else{
+                    document.write(' .');
+                }    
+            }
+            document.write('<br/>');
+        }
+        
+        
+    </script>
+</body>
+</html>
