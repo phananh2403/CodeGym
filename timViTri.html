@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //tạo ra 1 mảng chứa 20 phần tử được sinh ra ngẫu nhiên
+        //trong khoảng (min,max).nhập vào 1 giá trị trong khoảng cho trước
+        //in ra những vị trí của giá trị đó trong mảng
+        var min = parseInt(prompt("Nhập giá trị nhỏ nhất của khoảng: "));
+        var max = parseInt(prompt("Nhập giá trị lớn nhất của khoảng: "));
+        var size = 20;
+        var a = [];
+        var value = parseInt(prompt("Nhập giá trị cân tìm vị trí: "));
+        //lấy phần tử mảng từ hàm random
+        for (var i = 0; i < size; i++) {
+            a[i] = Math.floor(Math.random() * ((max-min+1)+min));
+        }
+        let found = false;//gọi cờ
+        document.write(a);//in mảng
+        //tìm vị trí
+        var j = 0;
+        var index = 0;//vị trí
+        var b=[];//hàm chứa vị trí
+        for (j; j <= size; j++) {
+            if (a[j] == value) {
+                found = true;
+                index = j;
+                b.push(index);
+                
+            }
+        }
+        found ? document.write(`<br> có số ${value} ở vị trí ${b}`) : document.write(`<br> không có số ${value}`);
+    
+    </script>
+</body>
+</html>
