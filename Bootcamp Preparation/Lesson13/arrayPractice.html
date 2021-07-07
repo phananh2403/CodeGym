@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        // 1
+        let count = 0;
+        let nums = [30,5,12,8,65,7,9,18,85,100];
+        for(var i = 0 ;i < nums.length;i++){
+            if(nums[i]>10){
+                count++;
+            }
+        }
+        console.log(count);
+        */
+        /*
+        // 2 tìm giá trị lớn nhất trong mảng
+        let numbers = [30,5,12,8,65,7,9,18,85,100];
+        let max = numbers[0];
+        let index = 0;
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+                index = i;
+            }
+        }
+        alert("max: " + max + " at position " + index);
+        */
+        /*
+        // 3 - cho 1 mảng,in ra max & tổng trung bình của mảng đó
+        var min = parseInt(prompt("Nhập giá trị nhỏ nhất của khoảng: "));
+        var max = parseInt(prompt("Nhập giá trị lớn nhất của khoảng: "));
+        var size = parseInt(prompt("Enter size"));
+        var a = [];
+        
+        for (var i = 0; i < size; i++) {
+            a[i] = Math.floor(Math.random() * ((max-min+1)+min));
+        }
+        
+        document.write(a);
+        var j = 1;
+        var index = 0;
+        var max = a[0];
+        for (j; j <= size; j++) {
+            if (max < a[j]) {
+                max = a[j];
+            }
+        }
+        alert("max is:" + max);
+        var total = 0;
+        for(let k = 0;k<size;k++){
+            total += a[k];
+        }
+        alert("Average total: " + total);
+        */
+        /*
+        // 4 - cho 1 mảng,đảo ngược phần tử mảng đó
+        var min = parseInt(prompt("Nhập giá trị nhỏ nhất của khoảng: "));
+        var max = parseInt(prompt("Nhập giá trị lớn nhất của khoảng: "));
+        var size = parseInt(prompt("Enter size"));
+        var a = [];
+        
+        for (var i = 0; i < size; i++) {
+            a[i] = Math.floor(Math.random() * ((max-min+1)+min));
+        }
+        let first = 0;
+        let last = a.length;
+        while (first < last) {
+            let b = a[first];
+            a[first] = a[last];
+            a[last] = b;
+            first++;
+            last--;
+        }
+        document.write("Mảng sau khi đảo ngược: " + a);
+        */
+       /*
+        // 5 - đếm số nguyên âm
+        var min = parseInt(prompt("Nhập giá trị nhỏ nhất của khoảng: "));
+        var max = parseInt(prompt("Nhập giá trị lớn nhất của khoảng: "));
+        var size = parseInt(prompt("Enter size"));
+        var a = [];
+        var count = 0;
+        for (var i = 0; i < size; i++) {
+            a[i] = Math.floor(Math.random() * ((max-min+1)+min));
+            if(a[i]<0){
+                count++;
+            }
+        }
+        document.write(count);
+        */
+    //    // 6
+    //    let arr = [1,5,8,7,16,39,96,75,10,"V"];
+    //    for(var i = 0;i<arr.length;i++){
+    //        if(arr[i]==="V"){
+    //            alert("V is in the array");
+    //        }
+    //        else{
+    //            alert("V is not in the array");
+    //        }
+    //    }
+
+    //    // 7
+    //    var remove;
+    //    let arr = [1,5,8,7,16,39,96,75,10,"V"];
+    //    for(var i = 0;i<arr.length;i++){
+    //         if(arr[i]=="V"){
+    //             //console.log(i);
+    //             remove = arr.splice(i,1);//array.splice(start,n) - bắt đầu xóa n phần tử từ vị trí start
+    //         }
+    //    }
+    //    console.log(arr + " " + "Đã xóa thành công phần tử 'V'");
+
+        // // 8 
+        // let arr = [1,5,8,7,16,39,96,75,10,99];
+        // let arr2 = [];
+        // arr2 = arr.sort(function(a,b){return b - a});
+        // console.log(arr2);
+
+        // 9
+        let arr = [1,5,8,7,16,39,96,75,10,99];
+        let arr2 = [22,56,89,7,45,16,31,2,4,9];
+        let arr3 = arr.concat(arr2);
+        console.log(arr3);
+    </script>
+</body>
+
+</html>
