@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 1
+        // var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+        // for (var i in a) {
+        //     console.log("row " + i);
+        //     for (var j in a[i]) {
+        //         console.log(" " + a[i][j]);
+        //     }
+        // }
+
+        // // 2 đếm ký tự số trong mảng
+        // let arr = [ 'c', 's', 'c', '2', '6', '1' ];
+        // let arr2 = arr.reverse().join();//hàm reverse() - đảo ngược mảng,join() - nối các phần tử trong mảng
+        // console.log(arr2);
+
+        // // 3 Viết một chương trình khai báo một mảng ký 
+        // //tự và kích thước của mảng.
+        // // Chương trình này đếm số ký tự số trong mảng. 
+        // let arr = [1,2,3,4,5,'a',6];
+        // var arr2 = [];
+        // for(let i=0;i<arr.length;i++){
+        //     if(typeof arr[i] === 'number'){//dùng typeof và === kiểm tra kiểu dữ liệu của phần thử trong mảng có phải là kiểu number không?
+        //         arr2.push(arr[i]);        
+        //     }
+        // }
+        // console.log("Number of numberic element:" + arr2.length);
+
+        // // 4 - đếm ký tự chuỗi trong mảng
+        // let arr = [1,2,3,4,5,'a',6];
+        // var arr2 = [];
+        // for(let i=0;i<arr.length;i++){
+        //     if(typeof arr[i] === 'string'){
+        //         arr2.push(arr[i]);        
+        //     }
+        // }
+        // console.log("Number of string element:" + arr2.length);
+
+        // // 5 so sánh chuỗi
+        // let str1 = "Hi i am gosu!";
+        // let str2 = "Yahallo!";
+        // console.log(str1.localeCompare(str2)); //localeCompare dùng để so sánh chuỗi
+        //     // trả về 0 : 2 mảng trùng nhau
+        //     // trả về -1 : mảng 1 > mảng 2
+        //     // trả về 1 : mảng 1 < mảng 2
+
+        // 6 thay '-' bằng '_'
+        let arr = ['-','/','*','+','/','`'];
+        for(let i = 0;i<arr.length;i++){
+            if(arr[i]=='-'){
+                arr[i]=='_';
+            }
+            
+        }
+        console.log(arr);
+    </script>
+</body>
+
+</html>
