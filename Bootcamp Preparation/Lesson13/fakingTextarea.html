@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Faking Textarea on Typing</h2>
+    <form name="f">
+        <textarea name="txt" cols="30" rows="10" onkeydown="typeTextarea();">
+        </textarea>
+    </form>
+
+    <script>
+        var a = " TÔI LÀ MỘT ĐỨA NGỐC !!";//khai báo 1 chuỗi chứa dòng chữ...
+        var b = "";//khai báo chuỗi thứ 2 có giá trị là khoảng trống
+        function typeTextarea() {
+            //gọi t là biến mà giá trị của t là giá trị được lấy từ 
+            //form có name = f cụ thể là textarea có tên là txt
+            var t = document.f.txt.value;
+            //gán j = độ dài của giá trị của t(độ dài 1 chuỗi)
+            var j = t.length;
+            //nếu độ dài của j > 0(tức là được nhập vào từ bàn phím)
+            if (j > 0) {
+                //xét độ dài chuỗi của j
+                for (var i = 1; i <= j; i++) {
+                    //gán chuỗi b = giá trị của chuỗi a
+                    b = b + a[i];
+                    //nếu i == chiều dài chuỗi a
+                    if (i == a.length) {
+                        //gán giá trị trong textarea có tên là txt = khoảng trống
+                        document.f.txt.value = "";
+                        //gán b = khoảng trống
+                        b = "";
+                    }
+                }
+            }
+            //gán giá trị trong textarea có tên là txt = b
+            document.f.txt.value = b;
+            //gán b = khoảng trống
+            b = "";
+            // thiết lập khoảng thời gian = 1 mili giây để hàm typeText thực hiện nv
+            setTimeout("typeTextarea()", 1);
+        }
+    </script>
+</body>
+
+</html>
