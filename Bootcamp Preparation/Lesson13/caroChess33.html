@@ -36,6 +36,7 @@
             let positionX = prompt("X: ");
             let positionY = prompt("Y: ");
             data = "";
+            let flag = false;
             board[positionX][positionY] = "x";
             for (let i = 0; i < 3; i++) {
                 data += "<br/>";
@@ -43,18 +44,21 @@
                     data += board[i][j] + "&nbsp;&nbsp";
 
                 }
-                if ((board[0][0] == data && board[0][1] == data && board[0][2] == data)
-                    || (board[0][0] == data && board[1][1] == data && board[1][2] == data)
-                    || (board[0][0] == data && board[1][0] == data && board[2][0] == data)
-                    || (board[1][0] == data && board[1][1] == data && board[1][2] == data)
-                    || (board[2][0] == data && board[2][1] == data && board[2][2] == data)
-                    || (board[0][1] == data && board[1][1] == data && board[2][1] == data)
-                    || (board[0][2] == data && board[1][2] == data && board[2][2] == data)
-                    || (board[0][2] == data && board[1][1] == data && board[2][0] == data)) {
-                    alert("Win!");
+                // console.log(data);
+                if ((board[0][0] == 'x' && board[0][1] == 'x' && board[0][2] == 'x')
+                    || (board[0][0] == 'x' && board[1][1] == 'x' && board[1][2] == 'x')
+                    || (board[0][0] == 'x' && board[1][0] == 'x' && board[2][0] == 'x')
+                    || (board[1][0] == 'x' && board[1][1] == 'x' && board[1][2] == 'x')
+                    || (board[2][0] == 'x' && board[2][1] == 'x' && board[2][2] == 'x')
+                    || (board[0][1] == 'x' && board[1][1] == 'x' && board[2][1] == 'x')
+                    || (board[0][2] == 'x' && board[1][2] == 'x' && board[2][2] == 'x')
+                    || (board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x')) {
+                    flag = true;
                 }
             }
-
+            if(flag==true){
+                alert("Win");
+            }
             data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
             b.innerHTML = "<hr/>" + data;
         }
