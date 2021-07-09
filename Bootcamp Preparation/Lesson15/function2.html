@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 1
+        // function avg(){
+        //     var a = parseInt(prompt("Enter value of a: "));
+        //     var b = parseInt(prompt("Enter value of b: "));
+        //     var average = (a+b)/2;
+        //     console.log(average);
+        // }
+        // avg();
+
+        // // 2
+        // let r = parseInt(prompt("Ban kinh hinh tron: "));
+        // function dientich(){
+        //     var s = r * r * 3.14;
+        //     console.log("Dien tich la: " + s);
+        // }
+        // function chuvi(){
+        //     var c = 2 * r * 3.14;
+        //     console.log("Chu vi la: " + c);
+        // }
+        // dientich();
+        // chuvi();
+
+        // //3 tính giai thừa
+        // let n = parseInt(prompt("Nhap n: "));
+        // function giaithua(){
+        //     var result = 1;
+        //     for(let i = 1 ; i <= n;i++){
+        //         result = result * i;
+        //     }
+        //     console.log(result);
+        // }
+        // giaithua();
+
+        // // 4 nhập vào n,nếu n là kiểu số thì trả về true
+        // var n = prompt("Nhap n: ");
+        // function check(){
+        //     if(typeof(n)==='number')
+        //         return true;
+        //     else
+        //         return false;
+        // }
+        // check();
+
+        // // 5 tìm số nhỏ nhất
+        // var a = parseInt(prompt("Nhap a: "));
+        // var b = parseInt(prompt("Nhap b: "));
+        // var c = parseInt(prompt("Nhap c: "));
+        // function nhonhat(){ 
+        //     console.log(Math.min(a,b,c));
+        // }
+        // nhonhat();
+
+        // // 6
+        // var num = parseInt(prompt("Nhap so: "));
+        // function check(){
+        //     if(num > 0)
+        //         return true;
+        //     else
+        //         return false;
+        // }
+        // check();
+
+        // // 7
+        // var a = parseInt(prompt("Nhap a: "));
+        // var b = parseInt(prompt("Nhap b: "));
+        // function change(){
+        //     a = b + (b = a,0);
+        //     //(b=a, 0): gán giá trị ban đầu của a cho b, trả về số 0
+        //     //a = b + 0: gán giá trị b (ban đầu) + 0 cho a, tức gán a = b.
+        //     console.log("a = " + a);
+        //     console.log("b = " + b);
+        // }
+        // change();
+
+        // // 8
+        // let num = [1,2,3,4,5,6,7,8,9];
+        // function daonguoc(){
+        //     let arr;
+        //     arr = num.reverse();
+        //     console.log(arr);
+        // }
+        // daonguoc();
+
+        // 9
+        /*Viết hàm truyền vào một mảng ký tự, 
+        và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó
+         có nằm trong mảng không.
+         Nếu có trả về số lần xuất hiện của ký tự đó,
+          nếu không trả về -1. */
+        var str = prompt("Nhap vao 1 ky tu: ");
+        let arr = ['a','b','c','d','e','f'];
+        var index = [];
+        var b = 0;
+        let flag = false;
+        function find(){
+            for(let i = 0;i < arr.length;i++){
+                if(str == arr[i]){
+                    flag = true;
+                    b = i;
+                    index.push(b);
+                }
+            }
+            flag ? console.log(index) : -1;
+        }
+        find();
+    </script>
+</body>
+</html>
