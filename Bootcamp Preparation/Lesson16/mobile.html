@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Mobile phone</h2>
+    <table border="1">
+        <tr>
+            <td>
+                <input type="button" value="Turn On" onclick="funct1()">
+            </td>
+            <td>
+                <input type="button" value="Turn Off" onclick="funct2()">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Sạc pin" onclick="funct3()">
+            </td>
+            <td>
+                <input type="button" value="Soạn tin nhắn" onclick="funct4()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Gửi tin nhắn" onclick="funct5()">
+            </td>
+            <td>
+                <input type="button" value="Kiểm tra pin" onclick="funct6()">
+            </td>
+        </tr>
+    </table>
+    <script>
+        var Moblie = function (battery, memoryArea1, memoryArea2, memoryArea3) {
+            this.battery = battery;
+            this.memoryArea1 = memoryArea1;//lưu tin nhắn đang soạn thảo
+            this.memoryArea2 = memoryArea2;//lưu tin nhắn trong hộp thư đến
+            this.memoryArea3 = memoryArea3;//lưu tin nhắn đã gửi
+
+            this.checkStatusOnOff = function (){
+                if (this.battery > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+            this.turnOn = function (){
+                alert("Đang khỏi động!");
+            };
+
+            this.turnOff = function (){
+                alert("Tắt nguồn.....");
+            };
+
+            this.charge = function (){
+                alert(`Đang sạc pin....... ${this.battery++}%`);
+            };
+
+            this.writeMessenger = function (){
+                prompt("Mời nhập tin nhắn:");
+            };
+
+            this.sendMessenger = function (){
+                alert("Đã gửi!");
+
+            };
+            this.afterUse = function (){
+                alert(`Dung lượng pin hiện tại: ${this.battery--}%`);
+            }
+
+        };
+        let mobile = new Moblie(50,100,100,100);
+        function funct1(){
+            mobile.turnOn();
+        }
+        function funct2(){
+            mobile.turnOff();
+        }
+        function funct3(){
+            mobile.charge();
+        }
+        function funct4(){
+            mobile.writeMessenger();
+        }
+        function funct5(){
+            mobile.sendMessenger();
+        }
+        function funct6(){
+            mobile.afterUse();
+        }
+    </script>
+</body>
+
+</html>
