@@ -90,29 +90,29 @@
             document.write(`tổng các giá trị trên đường chéo phụ = ${sum3}`);
             document.write("<br/>");
         }
-        function tongBien() {
-            var tong1, tong2 = 0;
-            var sum4 = 0;
-            for (let m = 0; m < size; m++) {
-                tong1 = tong1 + arr[0][m] + arr[size - 1][m];
-               
-
+        function tongDuongBien(arr) {
+            var sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (i == 0 || j == 0 || i == arr.length - 1 || j == arr.length - 1) {
+                        sum += arr[i][j];
+                    }
+                }
             }
-            for (let n = 0; n < size - 1; n++) {
-                tong1 = tong1 + arr[n][0] + arr[n][size - 1];
-                
-            }
-            //sum4 = tong1 + tong2;
-            document.write(`tổng các giá trị trên đường biên = ${tong1}`);
+            document.write(`tổng các giá trị trên đường biên = ${sum}`);
             document.write("<br/>");
         }
+
+
+
+
         taoMang();
         tamGiacTren();
         tamGiacDuoi();
         tongChan();
         tongCheo();
         tongPhu();
-        tongBien();
+        tongDuongBien(arr);
     </script>
 </body>
 
