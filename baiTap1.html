@@ -17,7 +17,7 @@
             for (let i = 0; i < size; i++) {
                 let arr2 = [];
                 for (let j = 0; j < size; j++) {
-                    arr2[j] = Math.floor((Math.random() * (90 - 10 + 1) + 10));
+                    arr2[j] = Math.floor((Math.random() * (90 - 10 + 1) )+ 10);
                 }
                 arr[i] = arr2;
             }
@@ -80,12 +80,8 @@
 
         function tongPhu() {
             var sum3 = 0;
-            for (let m = 0; m < size; m++) {
-                for (let n = 0; n < size; n++) {
-                    if (m == size - n) {
-                        sum3 = sum3 + arr[m][n];
-                    }
-                }
+            for (let  i = arr.length - 1; i >= 0; i--) {
+                sum3 += arr[i][arr.length - i - 1];
             }
             document.write(`tổng các giá trị trên đường chéo phụ = ${sum3}`);
             document.write("<br/>");
@@ -95,17 +91,13 @@
             for (let i = 0; i < arr.length; i++) {
                 for (let j = 0; j < arr[i].length; j++) {
                     if (i == 0 || j == 0 || i == arr.length - 1 || j == arr.length - 1) {
-                        sum += arr[i][j];
+                        sum = sum + arr[i][j];
                     }
                 }
             }
             document.write(`tổng các giá trị trên đường biên = ${sum}`);
             document.write("<br/>");
         }
-
-
-
-
         taoMang();
         tamGiacTren();
         tamGiacDuoi();
