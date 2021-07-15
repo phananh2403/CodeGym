@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="ON" onclick="on()">
+    <input type="button" value="OFF" onclick="off()">
+    <input type="button" value="CONNECT" onclick="connection()">
+    <script>
+        //khởi tạo đối tượng công tắc
+        var SwitchButton = function(){
+            this.status = true;
+            this.lamp = null;
+
+            this.connectToLamp = function(){
+                if(this.status == true){
+                    alert("Connected!");
+                }
+                else{
+                    alert("Try again!");
+                }
+            };
+            this.switchOff = function(){
+                this.status == false;
+                alert("Turn off...");
+            };
+            this.switchOn = function(){
+                this.status == true;
+                alert("Turn on!");
+            };
+
+        };
+        //khởi tạo đối tượng bóng đèn
+        var ElectricLamp = function(){
+            this.status = false
+
+            this.turnOff = function(){
+                this.status == false;
+                alert("Turn off...");
+            };
+            this.turnOn = function(){
+                this.status == true;
+                alert("Turn on!");
+            };
+        };
+        //gọi biến congtac,bongden
+        var congtac = new SwitchButton();
+        var bongden = new ElectricLamp();
+        bongden(congtac);
+        //chức năng tắt bóng đèn
+        function off() {
+            bongden.turnOff(congtac.switchOff());
+        }
+        //chức năng bật bóng đèn
+        function on() {
+            bongden.turnOn(congtac.switchOn());
+        }
+        //kết nối bóng đèn với công tắc
+        function connection() {
+            congtac.connectToLamp();
+        }
+    </script>
+</body>
+</html>
