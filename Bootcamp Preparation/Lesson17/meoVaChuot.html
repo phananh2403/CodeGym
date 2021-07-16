@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            background-color: #595959;
+            color: #D9D9D9;
+            border: none;
+            font-family: verdana;
+            text-align: center;
+        }
+
+        .tbl {
+            background-color: #8C8C8C;
+            border: 10px;
+            margin: auto;
+            width: 30%;
+            border: none;
+            outline: none;
+            padding: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div id="btn" class="tbl">
+            <input type="button" value="Jerry" onclick="funct1()">
+            <input type="button" value="Tom" onclick="funct2()"><br>
+            <input type="button" value="Jerry info" onclick="funct3()">
+            <input type="button" value="Tom info" onclick="funct4()"><br>
+            <input type="button" value="Tom catch Jerry" onclick="funct5()">
+            <input type="button" value="Tom eat Jerry" onclick="funct6()">
+        </div>
+    </form>
+
+    <script>
+        var Rat = function (name, mouseweight, mousespeed, mouselife) {
+            this.name = name;
+            this.mouseweight = mouseweight;
+            this.mousespeed = mousespeed;
+            this.mouselife = mouselife;
+
+            this.said = function () {
+                alert("chít, chít");
+            };
+            this.info = function () {
+                document.write("Rat's name is: " + name);
+                document.write("<br>");
+                document.write("Rat's weight is: " + mouseweight);
+                document.write("<br>");
+                document.write("Rat's speed is: " + mousespeed);
+                document.write("<br>");
+                document.write("Rat's life is: " + mouselife);
+            };
+            this.getMouseLife = function () {
+                this.mouselife = this.mouselife - 1;
+                if (this.mouselife == 0)
+                    alert("Die!");
+                return this.mouselife;
+            };
+            this.getMouseSpeed = function () {
+                return this.mousespeed
+            };
+        };
+        var Cat = function (catname, catweight, catspeed, getMouse) {
+            this.catname = catname;
+            this.catweight = catweight;
+            this.catspeed = catspeed;
+            this.getMouse = getMouse;
+
+            this.catSaid = function () {
+                alert("meo,meo");
+            };
+            this.catinfo = function () {
+                document.write("Cat's name is: " + catname);
+                document.write("<br>");
+                document.write("Cat's weight is: " + catweight);
+                document.write("<br>");
+                document.write("Cat's speed is: " + catspeed);
+            }
+            this.catchMouse = function () {
+                if (this.catspeed > this.getMouse.getMouseSpeed()) {
+                    alert("caught the mouse");
+                }
+            };
+            this.eatMouse = function () {
+                if (this.getMouse.getMouseLife() > 0)
+                    this.catweight = this.catweight + 1;
+                return this.catweight;
+            };
+        };
+        var mouse = new Rat("Jerry", 2, 50, 3);
+        var cat = new Cat("Tom", 5, 100, mouse);
+        function funct1() {
+            mouse.said();
+        }
+        function funct2() {
+            cat.catSaid();
+        }
+        function funct3() {
+            mouse.info();
+        }
+        function funct4() {
+            cat.catinfo();
+        }
+        function funct5() {
+            cat.catchMouse();
+        }
+        function funct6() {
+            var noitification = alert("The mouse has been eaten and Cat's weight is: " + cat.eatMouse());
+        }
+    </script>
+</body>
+
+</html>
