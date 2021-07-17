@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        // 1
+        function doinhietdo(){
+            var c = parseInt(prompt("Do Celsius"));
+            var f = (c * 1.8) + 32;
+            document.write("Nhiet do F: " + f);
+        }
+        doinhietdo()
+        */
+        /*
+        // 2
+        function mettofeet(){
+            var m = parseInt(prompt("Enter the number of m: "));
+            var f = m * 3.2808;
+            console.log(f);
+
+        }
+        mettofeet();
+        */
+        /*
+        // 3
+        function areaSquare(){
+            var a = parseInt(prompt("Enter square edge:"));
+            var s = a * 4;
+            console.log("Area square:" + s);
+        }
+        areaSquare();
+        */
+        /*
+        // 4
+        function rectangularArea(){
+            var a = parseInt(prompt("Enter length: "));
+            var b = parseInt(prompt("Enter width: "));
+            var s = a * b;
+            console.log(s);
+        }
+        rectangularArea();
+        */
+        /*
+        // 5
+        function triangleArea(){
+            var a = parseInt(prompt("Entar right triage edge:"));
+            var b = parseInt(prompt("Entar 2nd right triage edge:"));
+            var s = 1/2 * a * b;
+            console.log(s);
+        }
+        triangleArea();
+        */
+        /*
+        // 6 Solving equations of degree 1 ax + b = 0
+        var a = parseInt(prompt("Enter the value of a: "));
+        console.log(a);
+        var b = parseInt(prompt("Enter the value of a: "));
+        console.log(b);
+        if (a == 0){
+            alert("The equation has no solution!");//Vô nghiệm
+        }
+        else if (b == 0){
+            alert("The equation has infinitely many solutions!");//Vô số nghiệm
+        }
+        else{
+            x = - b / a;
+            console.log(x);
+            alert("Result is:" + x);
+        }
+        */
+        /*
+        // 7 Giải phương trình bậc 2 | Solving equations of degree 2
+        var a = parseInt(prompt("Enter value of a: "));
+        var b = parseInt(prompt("Enter value of b: "));
+        var c = parseInt(prompt("Enter value of c: "));
+        var delta = b * b - 4 * a * c;
+        if(delta < 0){
+            alert("Vô số nghiệm");
+
+        }
+        else if(delta == 0){
+            x = - b / ( 2 * a );
+            alert("Nghiệm kép là: " + x);
+        }
+        else{
+            x1 = (- b + Math.sqrt(delta)) / ( 2 * a );
+            x2 = (- b - Math.sqrt(delta)) / ( 2 * a );
+            alert("Phương trình có 2 nghiệm phân biệt: " + x1 + "và" + x2);
+        }
+        */
+       /*
+        // 8
+        let age = parseInt(prompt("Enter human's age: "));
+        if(age > 0 && age < 120){
+            alert("Human");
+        }
+        else
+            alert("Not human");
+        */
+        /*
+        // 9
+        var a = parseInt(prompt("Cạnh a: "));
+        var b = parseInt(prompt("Cạnh b: "));
+        var c = parseInt(prompt("Cạnh c: "));
+        if(a > 0 && b > 0 && c > 0){
+            if(a + b > c){
+                if(b + c > a){
+                    if(a + c > b){
+                        alert("Là hình tam giác")
+                    }
+                }
+            }
+        }
+        else
+            alert("Không là hình tam giác:");
+        */
+        /*  Tính tiền điện phải trả biết các thức tính tiền như sau
+        1. 100Kwh định mức đầu tiên có đơn giá trung bình là 600 đ/kwh
+        2. các kwh từ 101 --> 150 có đơn giá là 700 đ/kwh
+        3. các kwh từ 151--> 200 có đơn giá là 900 đ/kwh
+        4. các kwh từ 201 trở đi có đơn giá là 1100 đ/kwh 
+
+        let kw = parseInt(prompt("Nhập  lượng điện tiêu thụ:"));
+        let money = parseInt();
+        if(101 <= kw && kw <= 150){
+            money = 100 * 600 + (kw - 100) * 700;
+            console.log("Tiền điện là: " + money);
+        }
+        else if(151 <= kw && kw <= 200){
+            money = 100 * 600 + (150 - 100) * 700 + (kw - 150) * 900;
+            console.log("Tiền điện là: " + money);
+        }
+        else{
+            money = 100 * 600 + (150 - 100) * 700 + (200 - 150) * 900 + (kw - 200) * 1100;
+            console.log("Tiền điện là: " + money);
+        } 
+        */
+        /* thuế thu nhập cá nhân
+        Bậc 1: 4 triệu đồng/tháng 0%;
+        Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;
+        Bậc 3: Trên 6 - 9 triệu đồng: 10%;
+        Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;
+        Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;
+        Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;
+        Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;
+        Bậc 8: Trên 84 triệu đồng: 35%. 
+        ----------------------------------
+        Thuế thu nhập cá nhân:personal income tax
+        Lương:salary */
+        
+        var salary = parseInt(prompt("Enter your salary: "));
+        var tax = parseInt();
+        if(salary <= 4000000){
+            tax = salary * 0;
+            console.log(tax);
+        }
+        else if(4000000 < tax && tax <= 6000000){
+            tax = salary * 5 / 100;
+            console.log(tax);
+        }
+        else if(6000000 < tax && tax <= 9000000){
+            tax = salary * 10 / 100;
+            console.log(tax);
+        }
+        else if(9000000 < tax && tax <= 14000000){
+            tax = salary * 15 / 100;
+            console.log(tax);
+        }
+        else if(14000000 < tax && tax <= 24000000){
+            tax = salary * 20 / 100;
+            console.log(tax);
+        }
+        else if(24000000 < tax && tax <= 44000000){
+            tax = salary * 25 / 100;
+            console.log(tax);
+        }
+        else if(44000000 < tax && tax <= 84000000){
+            tax = salary * 30 / 100;
+            console.log(tax);
+        }
+        else {
+            tax = salary * 35 / 100;
+            console.log(tax);
+        }
+        
+        
+    </script>
+
+</body>
+</html>

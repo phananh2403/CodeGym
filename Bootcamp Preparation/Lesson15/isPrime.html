@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number?</title>
+</head>
+<body>
+    <div>
+        <span>Number<input type="text" id="kt"></span><br>
+        <span><input type="button" value="kiemtra" id="btn" onclick="isPrimeNumber()"></span><br>
+        <span><input type="text" id="result"></span>
+    </div>
+    
+    <script>
+        
+        function isPrimeNumber() {
+        let number = parseInt(document.getElementById('kt').value);
+        let isPrime = true;
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        document.getElementById('result').value = isPrime && number>=2 ? `${number} là số nguyên tố` : `${number} không là số nguyên tố`;
+    }
+        
+    </script>
+</body>
+</html>

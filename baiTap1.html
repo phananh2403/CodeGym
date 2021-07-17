@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //tạo mảng vuông nxn rồi thực hiện theo các yêu cầu
+        var size = parseInt(prompt("Nhap kich thuoc mang vuong: "));
+        var arr = [];
+        function taoMang() {
+            for (let i = 0; i < size; i++) {
+                let arr2 = [];
+                for (let j = 0; j < size; j++) {
+                    arr2[j] = Math.floor((Math.random() * (90 - 10 + 1) )+ 10);
+                }
+                arr[i] = arr2;
+            }
+            for (let f = 0; f < size; f++) {
+                for (let t = 0; t < size; t++) {
+                    document.write(arr[f][t] + "&nbsp");
+                }
+
+                document.write("<br/>");
+            }
+            document.write("------------------------------------")
+            document.write("<br/>");
+        }
+        function tamGiacTren() {
+            //Hiển thị ma trân tam giác trên
+            for (let m = 0; m < size - 1; m++) {
+                for (let n = 0; n < size - 1 - m; n++) {
+                    document.write(arr[m][n] + "&nbsp");
+                }
+                document.write("<br/>")
+            }
+            document.write("------------------------------------")
+            document.write("<br/>");
+        }
+        function tamGiacDuoi() {
+            //Hiển thị ma trận tam giác dưới
+            for (let m = 1; m < size; m++) {
+                for (let n = size - m; n < size; n++) {
+                    document.write(arr[m][n] + "&nbsp");
+                }
+                document.write("<br/>")
+            }
+            document.write("------------------------------------")
+            document.write("<br/>");
+        }
+        function tongChan() {
+            var sum = 0;
+            for (let m = 0; m < size; m++) {
+                for (let n = 0; n < size; n++) {
+                    if (arr[m][n] % 2 == 0) {
+                        sum = sum + arr[m][n];
+                    }
+                }
+            }
+            document.write(`tổng các số chẵn trong ma trận = ${sum}`);
+            document.write("<br/>");
+        }
+        function tongCheo() {
+            var sum2 = 0;
+            for (let m = 0; m < size; m++) {
+                for (let n = 0; n < size; n++) {
+                    if (m == n) {
+                        sum2 = sum2 + arr[m][n];
+                    }
+                }
+            }
+            document.write(`tổng các giá trị trên đường chéo chính = ${sum2}`);
+            document.write("<br/>");
+        }
+
+        function tongPhu() {
+            var sum3 = 0;
+            for (let  i = arr.length - 1; i >= 0; i--) {
+                sum3 += arr[i][arr.length - i - 1];
+            }
+            document.write(`tổng các giá trị trên đường chéo phụ = ${sum3}`);
+            document.write("<br/>");
+        }
+        function tongDuongBien(arr) {
+            var sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (i == 0 || j == 0 || i == arr.length - 1 || j == arr.length - 1) {
+                        sum = sum + arr[i][j];
+                    }
+                }
+            }
+            document.write(`tổng các giá trị trên đường biên = ${sum}`);
+            document.write("<br/>");
+        }
+        taoMang();
+        tamGiacTren();
+        tamGiacDuoi();
+        tongChan();
+        tongCheo();
+        tongPhu();
+        tongDuongBien(arr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Caro Game Simple 3x3</h3>
+    <p id="carogame"></p>
+    <input type="button" value="Change Value" onclick="changeValue()">
+    <script>
+        //Hiển thị bàn cờ
+        let b = document.getElementById("carogame");
+
+        let board = [];
+        let data = "";
+        for (let i = 0; i < 3; i++) {
+            board[i] = new Array(0, 0, 0);
+        }
+
+        for (let i = 0; i < 3; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 3; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+        b.innerHTML = data;
+        //Xử lý sự kiện khi người dùng click chuột vào nút “Change Value”
+        function changeValue() {
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            let flag = false;
+            board[positionX][positionY] = "x";
+            for (let i = 0; i < 3; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 3; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp";
+
+                }
+                // console.log(data);
+                if ((board[0][0] == 'x' && board[0][1] == 'x' && board[0][2] == 'x')
+                    || (board[0][0] == 'x' && board[1][1] == 'x' && board[1][2] == 'x')
+                    || (board[0][0] == 'x' && board[1][0] == 'x' && board[2][0] == 'x')
+                    || (board[1][0] == 'x' && board[1][1] == 'x' && board[1][2] == 'x')
+                    || (board[2][0] == 'x' && board[2][1] == 'x' && board[2][2] == 'x')
+                    || (board[0][1] == 'x' && board[1][1] == 'x' && board[2][1] == 'x')
+                    || (board[0][2] == 'x' && board[1][2] == 'x' && board[2][2] == 'x')
+                    || (board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x')) {
+                    flag = true;
+                }
+            }
+            if(flag==true){
+                alert("Win");
+            }
+            data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+            b.innerHTML = "<hr/>" + data;
+        }
+    </script>
+</body>
+
+</html>

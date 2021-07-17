@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nâng cấp lên remote TV xịn!</title>
+</head>
+<body>
+    <div>
+        <input type="button" value="Up volume" onclick="upVolume()">
+        <input type="button" value="Turn on" onclick="turnOn()"><br>
+        <input type="button" value="7" onclick="switch7()">
+        <input type="button" value="3" onclick="switch3()"><br>
+        <input type="button" value="Turn off" onclick="turnOff()">
+    </div>
+    <script>
+        var Remote = function(code,volume,remoteChannel){
+            this.code = code;
+            this.volume = volume;
+            this.remoteChannel = remoteChannel;
+
+            this.getControlChannel = function(){
+                return this.code;
+            };
+            this.getVolume = function(){
+                return this.volume = this.volume + 2;
+            };
+            this.remoteChannel = function(remotechannel3){
+                this.remotechannel3 = remotechannel3;
+                if(this.remotechannel3 > 0){
+                    alert("This is channerl 3!");
+                }
+            };
+        };
+        var TiVi = function(channelnow,status,remoteChannel){
+            this.channelnow = channelnow;
+            this.status = status;
+            this.remoteChannel = null;
+
+            this.setStatus = function(nhap){
+                this.nhap = nhap;
+                if(nhap == 1){
+                    alert("Turn on TV!");
+                }
+                else if(nhap == 0 ){
+                    alert("Turn off TV.");
+                }
+                else
+                    alert("Chỉ được nhập 0 hoặc 1 !");
+            };
+            this.remoteChannels = function(){
+                this.remoteChannel.getControlChannel();
+            };
+            this.remoteChannel2 = function(channel7){
+                this.channel7 = channel7;
+                alert("This is channel 7!");
+            };
+        };
+        var tv = new TiVi(3,1,3);
+        var remote = new Remote(6,20,10);
+
+        function upVolume(){
+            var volume = remote.getVolume();
+            alert("Volume now is: " + volume);
+        }
+        function turnOn(){
+            alert("0 is Turn off - 1 is Turn on!");
+            var nhap = prompt("0 OR 1?");
+            tv.setStatus(nhap);
+        }
+        function switch7(){
+            var channel7th = prompt("Enter 7 to switch to channel 7!");
+            tv.remoteChannel(channel7th);
+        }
+        function switch3(){
+            var channel3rd = prompt("Enter 7 to switch to channel 7!");
+            tv.remoteChannel(channel3rd);
+        }
+        function turnOff(){
+            var nhap = prompt("Enter 0 to turn off!");
+            tv.setStatus(nhap);
+        }
+    </script>
+</body>
+</html>

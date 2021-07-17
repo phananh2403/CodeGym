@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro</title>
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        td:hover {
+            cursor: pointer;
+        }
+
+        td {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .bg-green {
+            background-color: #14EAEE;
+        }
+
+        .bg-orange {
+            background-color: #F84343;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .bg-green,
+        .bg-orange {
+            color: white;
+        }
+
+        .timer {
+            text-align: center;
+        }
+
+        .area1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body >
+    <div class="timer">Time for each turn <span id="time">00:04</span></div>
+    <div id="caro-area">
+
+    </div>
+
+    <script>
+        const player_x = 1;
+        const player_o = 2;
+        let player = player_x;
+        let size = parseInt(prompt("Enter size of board."));
+        let luotchoi = Math.floor((Math.random() * 2) + 1);
+        if (luotchoi == 1) {
+            alert('Player 1 go first!');
+        }
+        else{
+            alert('Player 2 go first!');
+        }
+        let caro = [];
+        let isGameEnd = false;
+
+
+        for (let i = 0; i < size; i++) {
+            let arr = [];
+            for (let j = 0; j < size; j++) {
+                arr[j] = 0;
+            }
+            caro[i] = arr;
+        }
+
+
+        let table = "<table border='1' style='width:400px;height:400px;margin:auto' >";
+        for (let i = 0; i < size; i++) {
+            table += "<tr>";
+            for (let j = 0; j < size; j++) {
+                table += `<td style="text-align:center" onclick="play(${i},${j})">${caro[i][j] == 0 ? '&nbsp;&nbsp;' : (caro[i][j] == 1 ? 'X' : 'O')} </td>`
+            }
+            table += "</tr>";
+        }
+        table += "</table>";
+
+        document.getElementById('caro-area').innerHTML = table;
+
+        function play(row, col) {
+            if (caro[row][col] != 0) {
+                alert(`invalid`);
+            }
+            else {
+                if (player == player_x) {
+                    player = player_o;
+                    caro[row][col] = 1;
+                }
+                else {
+                    player = player_x;
+                    caro[row][col] = 10;
+                }
+            }
+
+            let table = "<table border='1' style='width:400px;height:400px;margin:auto'>";
+            for (let i = 0; i < size; i++) {
+                table += "<tr>";
+                for (let j = 0; j < size; j++) {
+                    table += `<td style="text-align:center" 
+                                class=${caro[i][j] == 0 ? 'bg-white' :
+                            caro[i][j] == 1 ? 'bg-green' : 'bg-orange'} 
+                                onclick="play(${i},${j})">${caro[i][j] == 0 ? '&nbsp;&nbsp;&nbsp;&nbsp;' : (caro[i][j] == 1 ? 'X' : 'O')} </td>`;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.getElementById('caro-area').innerHTML = table;
+        }
+
+        function checkWin(player, arr) {
+            for (let i = 0; i < arr.length - 3; i++) {
+                if (arr[i] == player && arr[i + 1] == player && arr[i + 2] == player)
+                    return true;
+            }
+            return false;
+        }
+
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fiveMinutes = 60 * 1 / 15,
+                display = document.querySelector('#time');
+            startTimer(fiveMinutes, display);
+            
+        };
+    </script>
+</body>
+
+</html>

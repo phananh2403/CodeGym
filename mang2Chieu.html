@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = new Array(5).fill(new Array(7));
+        
+        for(let i = 0; i<arr.length;i++){
+            
+            for(let j = 0;j<arr[i].length;j++){
+                arr[i][j] = Math.floor((Math.random()*(90-10+1)+10));
+                
+            }
+            
+        }
+        
+        document.write(arr);
+    </script>
+</body>
+</html>

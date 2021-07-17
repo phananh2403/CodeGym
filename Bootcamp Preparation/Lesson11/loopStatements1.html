@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        // 1
+        for(let i = 1;i<=100;i++){
+            if(i==99){
+                console.log("done");
+            }
+        }
+        */
+        /*
+        //2
+        let temperature = parseInt(prompt("Enter the value of temperature: "));
+        if(temperature < 20)
+            alert(" Increase! ")
+        else if(temperature > 120)
+            alert("Decrease!");
+        else
+            alert("Done");
+        */
+        /*
+        //Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+        const number = parseInt(prompt('Enter the number of terms: '));
+            let n1 = 0, n2 = 1, nextTerm;
+
+            console.log('Fibonacci Series:');
+
+            for (let i = 1; i <= number; i++) {
+                console.log(n1);
+                nextTerm = n1 + n2;
+                n1 = n2;
+                n2 = nextTerm;
+                
+            }
+        */
+       /*
+        //Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+        const number = parseInt(prompt('Enter the number of terms: '));
+            let n1 = 0, n2 = 1, nextTerm;
+
+            console.log('Fibonacci Series:');
+
+            for (let i = 1; i <= number; i++) {
+                console.log(n1);
+                nextTerm = n1 + n2;
+                n1 = n2;
+                n2 = nextTerm;
+                if(n1%5==0){
+                    console.log("số đầu tiên trong dãy fibonacci chia hết cho 5 la " + n1);
+                    break;
+                }
+            }
+        */
+        /*
+        //Tính tổng của 20 số đầu tiên trong dãy fibonacci
+        const number = parseInt(prompt('Enter the number of terms: '));
+            let n1 = 0, n2 = 1, nextTerm;
+            let sum = 0;
+            console.log('Fibonacci Series:');
+
+            for (let i = 1; i <= number; i++) {
+                console.log(n1);
+                nextTerm = n1 + n2;
+                n1 = n2;
+                n2 = nextTerm;
+                sum = sum + n1;
+                console.log("Total is: " + sum);
+            }
+        */
+            /*
+        //Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+        let num = parseInt(prompt("Enter number: "));// num = 209
+        let sum = 0;
+        //var count = 0;
+        for(var i = 0;i<= num;i++){
+            if(i%7==0)
+                sum+=i;
+        }
+        console.log(sum);
+        */
+        // 7
+        for(var i=1;i<=100;i++){
+            console.log(i);
+            if(i % 3 == 0)
+                console.log("Fizz");
+            else if(i % 5 == 0)
+                console.log("Buzz");
+            else if(i % 3 == 0 && i % 5 == 0)
+                console.log("FizzBuzz");
+            else
+                console.log("");
+        }
+    </script>
+</body>
+</html>

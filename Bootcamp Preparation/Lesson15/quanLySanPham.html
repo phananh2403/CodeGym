@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Add New Product</h2>
+    <table>
+        <tr>
+            <td><input type="text" id="txt" placeholder="Mặt hàng cần thêm">
+                <input type="button" name="Add" id="btn" value="Add" onclick="them()">
+                <input type="button" value="Display" id="btn2" onclick="hienthi()">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="txt2" placeholder="Mặt hàng cần xóa">
+                
+                <input type="button" value="Delete" onclick="xoa()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="Mặt hàng cần sửa" id="txt3">
+                <input type="button" value="Edit" onclick="sua()"><br>
+                <input type="text" placeholder="Mặt hàng mới" id="txt4">
+            </td>
+        </tr>
+    </table>
+    <h2>Display All Product</h2>
+    <div id="result"></div>
+    <script>
+        let item = ['IphoneX', 'Blackshark 4', 'Rog Phone 3', 'Sony Xperia', 'POCO X3 pro'];
+        function hienthi() {
+            let e = "<hr/>";
+            for (let i = 0; i < item.length; i++) {
+                e = e + item[i] + "<br/>";
+            }
+            document.getElementById('result').innerHTML = e;
+        }
+        function them() {
+            let add = document.getElementById('txt').value;
+            item.push(add);
+            alert("Đã thêm!")
+        }
+        function xoa() {
+            let rmv = document.getElementById('txt2').value;
+            
+            for (let i = 0; i < item.length; i++) {
+                if (rmv == item[i]) {
+                    item.splice(rmv, 1);
+                    alert("Da xoa!");
+                }
+                
+            }
+            
+        }
+        function sua() {
+            let edit1 = document.getElementById('txt3').value;
+            let edit2 = document.getElementById('txt4').value;
+            for(let i = 0;i<item.length;i++){
+                if(edit1 == item[i]){
+                    item[i] = edit2;
+                    alert("Đã sửa!");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

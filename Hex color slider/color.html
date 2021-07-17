@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <style>
+            #color-area{
+                width: 100%;
+                height: 100px;
+                text-align: center;
+                display: block;
+            }
+        </style>
+    </head>
+    <body onload="buildColor()">
+        <table border="1">
+            <tr>
+                <td colspan="4">
+                    <div id="color-area">
+                        rgb(0,0,0)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3 id="red_value"></h3>
+                    <input id="red" type="range" min=0 max=255 value="128" oninput=buildColor()>
+                </td>
+                <td>
+                    <h3 id="green_value"></h3>
+                    <input id="green" type="range" min=0 max=255 value="128" oninput=buildColor()>
+                </td>
+                <td>
+                    <h3 id="blue_value"></h3>
+                    <input id="blue" type="range" min=0 max=255 value="128" oninput=buildColor()>
+                </td>
+                <!--
+                <td>
+                    <h3 id="alpha_value"></h3>
+                    <input id="alpha" type="range" min=0 max=100 value="50" oninput="buildColor()">
+                </td>
+                -->
+            </tr>
+        </table>
+
+        <script>
+            function buildColor(){
+                let red = parseInt(document.getElementById("red").value).toString(16);
+                let green = parseInt(document.getElementById("green").value).toString(16);
+                let blue = parseInt(document.getElementById("blue").value).toString(16);
+                //let alpha = parseInt(document.getElementById("alpha").value)/100;
+                
+                document.getElementById('red_value').value = red;// dùng value,ko dùng innerText
+                document.getElementById('green_value').value = green;
+                document.getElementById('blue_value').value = blue;
+                //document.getElementById('alpha_value').innerText = alpha;
+
+                document.getElementById("color-area").innerHTML = `#${red}${green}${blue}`;
+                document.getElementById("color-area").style.backgroundColor = `#${red}${green}${blue}`;
+            }
+        </script>
+    </body>
+</html>

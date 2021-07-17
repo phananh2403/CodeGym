@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wufoo {
+            font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form action="simpleform.html" method="GET" class="wufoo">
+        <h2>Market Research Survey</h2>
+        <p>Please take a few moments to complete thí satisfaction survey</p>
+        <p><b>What is your range age?</b></p>
+        <select name="" id="">
+            <option value="1">18-24</option>
+        </select>
+        <p><b>What is your yearly income range?</b></p>
+        <select name="" id="">
+            <option value="1">$0 - $25,000</option>
+        </select>
+        <p><b>Gender</b></p>
+        <input type="radio">Male <br/>
+        <input type="radio">Female
+        <p><b>Which of the following products have your purchased in the last 2 months.Please check all that apply</b></p>
+        <input type="checkbox"> Product 1 <br/>
+        <input type="checkbox"> Product 2 <br/>
+        <input type="checkbox"> Product 3 
+        <p><b>How often would you use our new product?</b></p>
+        <input type="radio"> Daily <br/>
+        <input type="radio"> Weekly <br/>
+        <input type="radio"> Monthly 
+        <p><b>What would you pay for the new products?</b></p>
+        <p>$ <input type="text"> . <input type="text"></p>
+        <p><b>What fetures would you like to see in the new product.</b></p>
+        <textarea name="" id="" cols="70" rows="10"></textarea>
+        <p>Please rate your level of agreement with the following statement.</p>
+        <table border="1" style="width: 800px;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="background-color: gray;"></th>
+                    <th rowspan="1" style="background-color: gray;"><b>Strongly Disagree</b></th>
+                    <th rowspan="1" style="background-color: gray;"><b>Disagree</b></th>
+                    <th rowspan="1" style="background-color: gray;"><b>Agree</b></th>
+                    <th rowspan="1" style="background-color: gray;"><b>Strongly Agree</b></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="1"><b>Our products are prices fairly</b></th>
+                    <th rowspan="1"><input type="radio">1</th>
+                    <th rowspan="1"><input type="radio">2</th>
+                    <th rowspan="1"><input type="radio">3</th>
+                    <th rowspan="1"><input type="radio">4</th>
+                </tr>
+                <tr>
+                    <th rowspan="1" style="background-color: gray;"><b>Our products are high quality</b></th>
+                    <th rowspan="1" style="background-color: gray;"><input type="radio">1</th>
+                    <th rowspan="1" style="background-color: gray;"><input type="radio">2</th>
+                    <th rowspan="1" style="background-color: gray;"><input type="radio">3</th>
+                    <th rowspan="1" style="background-color: gray;"><input type="radio">4</th>
+                </tr>
+                <tr>
+                    <th rowspan="1"><b>You would recommend our product to a friend or coworker.</b></th>
+                    <th rowspan="1"><input type="radio">1</th>
+                    <th rowspan="1"><input type="radio">2</th>
+                    <th rowspan="1"><input type="radio">3</th>
+                    <th rowspan="1"><input type="radio">4</th>
+                </tr>
+
+            </tbody>
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

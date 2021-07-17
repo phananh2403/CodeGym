@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra đối xứng bằng đệ quy</title>
+</head>
+<body>
+    <script>
+        const str = prompt("Nhap vao chuoi; ");
+        // function firstCharacter(str){
+        //     return str.slice(0,1);
+        // }
+        // function lastCharacter(str){
+        //     return str.slice(-1);
+        // }
+        // function middleCharacter(str){
+        //     return str.slice(1,-1);
+        // }
+        // function isPalindrome(){
+        //     if(str.length < 2){
+        //         return true;
+        //     }
+        //     if(firstCharacter(str)== lastCharacter(str)){
+        //         return isPalindrome(middleCharacter(str));
+        //     }
+        //     return false;
+        // }
+        // ispalindrome();
+
+        function ispalindrome(str){
+            const strLen = str.length;
+            if(strLen<2)
+                return true;
+            if(str[0] === str[strLen-1]){
+                return ispalindrome(str.slice(1,strLen-1));
+            }
+            return false;
+        }
+        ispalindrome();
+    </script>
+</body>
+</html>

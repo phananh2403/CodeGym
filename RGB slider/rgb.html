@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB slider</title>
+    <style>
+        .main{
+            height: 400px;
+            width: 200px;
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        KetQua<input type="text" id="box" >
+        Red<input type="range" max="255" min="0" value="255" id="red" oninput=myColor() >
+        Green<input type="range" max="255" min="0" value="255" id="green" oninput=myColor()>
+        Blue<input type="range" max="255" min="0" value="255" id="blue" oninput=myColor()>
+        
+    </div>
+        
+        
+        
+   
+    <script src="scrip.js"></script>
+
+</body>
+
+</html>

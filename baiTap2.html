@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var n = parseInt(prompt("Nhập vào kích thước của mảng vuông: "));
+        function taoMang(size, max, min) {
+            var board = [];
+            for (let i = 0; i < size; i++) {
+                board[i] = new Array();
+                for (let j = 0; j < size; j++) {
+                    board[i][j] = new Array();
+                }
+            }
+
+            for (let i = 0; i < size; i++) {
+                for (let j = 0; j < size; j++) {
+                    board[i][j] = Math.floor(Math.random() * (max - min + 1) + min);
+                }
+            }
+            return board;
+        }
+        function hienThi(board) {
+            for (let i = 0; i < board.length; i++) {
+                for (let j = 0; j < board[i].length; j++) {
+                    document.write(board[i][j] + "&nbsp");
+                }
+                document.write("<br>");
+            }
+        }
+        var arr1 = taoMang(n, 40, 10);
+        var arr2 = taoMang(n, 40, 10);
+        hienThi(arr1);
+        document.write("--------------------------");
+        document.write("<br>");
+        hienThi(arr2);
+        document.write("--------------------------");
+        document.write("<br>");
+        //Tổng 2 ma trận
+        function tong(arr1, arr2) {
+            var arr = [];
+            for (let i = 0; i < arr2.length; i++) {
+                arr[i] = new Array();
+                for (let j = 0; j < arr1.length; j++) {
+                    arr[i][j] = new Array();
+                }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    arr[i][j] = 0;
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    arr[i][j] += arr1[i][j] + arr2[i][j];
+                }
+            }
+            return arr;
+        }
+        document.write("tổng 2 ma trận:");
+        document.write("<br>");
+        hienThi(tong(arr1, arr2));
+        document.write("--------------------------");
+        document.write("<br>");
+        //Tích 2 ma trận
+        function tich(arr1, arr2) {
+            var arr = [];
+            for (let i = 0; i < arr2.length; i++) {
+                arr[i] = new Array();
+                for (let j = 0; j < arr1.length; j++) {
+                    arr[i][j] = new Array();
+                }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    arr[i][j] = 0;
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    for (let k = 0; k < arr1.length; k++) {
+                        arr[i][j] += arr1[i][k] * arr2[k][j];
+                    }
+                }
+            }
+            return arr;
+        }
+        document.write("tích 2 ma trận: ");
+        document.write("<br>");
+        hienThi(tich(arr1, arr2));
+    </script>
+</body>
+
+</html>

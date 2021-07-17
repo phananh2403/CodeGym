@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = [-3, 5, 1, 3, 2, 10];//Khai báo mảng x và khởi tạo các phần tử trong mảng:
+        let first = 0;//Khai báo biến first và gán giá trị bằng 0. Biến này để duyệt từ phần tử đầu tiên trong mảng
+        let last = x.length - 1;//Khai báo biến last và gán giá trị bằng độ dài mảng trừ 1. Biến này để duyệt phần tử cuối cùng trong mảng.
+        while (first < last) {
+            let b = x[first];
+            x[first] = x[last];
+            x[last] = b;
+            first++;
+            last--;
+        }
+        // Dùng vòng lặp chạy với điều kiện first < last,
+        //  trong quá trình lặp đổi chỗ phần tử đầu tiên và cuối cùng
+        //   cho nhau. Sau đó tăng biến first lên 1 để duyệt phần tử 
+        //   tiếp theo, giảm last đi một.
+        document.write(x);
+    </script>
+</body>
+</html>
