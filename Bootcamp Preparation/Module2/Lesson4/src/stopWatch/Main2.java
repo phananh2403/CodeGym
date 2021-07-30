@@ -25,9 +25,9 @@ public class Main2 {
         selectionSort(a);
         LocalTime end = LocalTime.now();
         StopWatch sw = new StopWatch(start, end);
-        System.out.println("Time: " + sw.getElapsedTime());
         for (int x : a) {
             System.out.println(x);
         }
+        System.out.println("Time: " + sw.getElapsedTime());
     }
 }
