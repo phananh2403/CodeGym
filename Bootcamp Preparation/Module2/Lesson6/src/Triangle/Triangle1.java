@@ -46,18 +46,18 @@ public class Triangle1 extends Shape {
     }
 
     public double getPerimeter() {
-        return (side1 + side2 + side3) / 2;
+        return (side1 + side2 + side3);
     }
 
-    public double getArea(){
-        return Math.sqrt(getPerimeter()
-                *(getPerimeter()-side1)
-                *(getPerimeter()-side2)
-                *(getPerimeter()-side3));
+    public double getArea() {
+        return Math.sqrt(getPerimeter() / 2
+                * (getPerimeter() / 2 - side1)
+                * (getPerimeter() / 2 - side2)
+                * (getPerimeter() / 2 - side3));
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "A triangle with " + getSide1() + ","
                 + getSide2() + " and " + getSide3()
                 + " have Area = " + getArea()
