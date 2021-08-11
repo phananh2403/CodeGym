@@ -12,7 +12,9 @@ public class MyStack {
         return elements.isEmpty();
     }
     public boolean isFull(){
-        return elements.size() != 0;
+        if (elements.size() == elements.size())
+            return true;
+        return false;
     }
     public String pop(){
         if (elements.isEmpty())

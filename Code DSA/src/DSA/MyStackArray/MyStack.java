@@ -27,9 +27,9 @@ public class MyStack {
     }
 
     public boolean isFull() {
-        if (elements.size() == 0)
-            return false;
-        return true;
+        if (elements.size() == elements.size())
+            return true;
+        return false;
     }
 
     public void printStack(){
