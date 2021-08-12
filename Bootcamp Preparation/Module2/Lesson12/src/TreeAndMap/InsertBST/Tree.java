@@ -15,7 +15,16 @@ public interface Tree<E> {
      */
     public int getSize();
 
+    public TreeNode<E> getRoot();
+
     public void postorder();
 
     public void preorder();
+
+    public boolean delete(E e);
+
+    public boolean search(E e);
+
+    public boolean isEmpty();
+
 }

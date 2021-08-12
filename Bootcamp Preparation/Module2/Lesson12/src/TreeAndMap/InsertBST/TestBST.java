@@ -15,24 +15,39 @@ public class TestBST {
         tree.insert("Jones");
         tree.insert("Peter");
         tree.insert("Daniel");
-        //traverse tree
-        //Inorder left - root - right
-        System.out.println("Inorder (sorted): ");
+//        //traverse tree
+//        //Inorder left - root - right
+//        System.out.println("Inorder (sorted): ");
+//        tree.inorder();
+//        System.out.println("The number of nodes is: " + tree.getSize());
+//
+//        System.out.println("\n");
+//
+//        //Postorder left - right  -root
+//        System.out.println("Postorder (sorted): ");
+//        tree.postorder();
+//        System.out.println("The number of nodes is: " + tree.getSize());
+//
+//        System.out.println("\n");
+//
+//        //Preorder root - left - right
+//        System.out.println("Preorder (sorted): ");
+//        tree.preorder();
+//        System.out.println("The number of nodes is: " + tree.getSize());
+
+        System.out.println("\nAfter delete George:");
+        tree.delete("George");
+        printTree(tree);
+    }
+    public static void printTree(BST tree) {
+        // Traverse tree
+        System.out.print("Inorder (sorted): ");
         tree.inorder();
-        System.out.println("The number of nodes is: " + tree.getSize());
-
-        System.out.println("\n");
-
-        //Postorder left - right  -root
-        System.out.println("Postorder (sorted): ");
+        System.out.print("\nPostorder: ");
         tree.postorder();
-        System.out.println("The number of nodes is: " + tree.getSize());
-
-        System.out.println("\n");
-
-        //Preorder root - left - right
-        System.out.println("Preorder (sorted): ");
+        System.out.print("\nPreorder: ");
         tree.preorder();
-        System.out.println("The number of nodes is: " + tree.getSize());
+        System.out.print("\nThe number of nodes is " + tree.getSize());
+        System.out.println();
     }
 }

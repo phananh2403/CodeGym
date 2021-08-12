@@ -1,13 +1,20 @@
 package TreeAndMap.InsertBST;
 
-public abstract class AbstractTree<E> implements Tree<E>{
+public abstract class AbstractTree<E> implements Tree<E> {
     @Override /* Inorder traversal from the root*/
     public void inorder() {
     }
 
     @Override
-    public void postorder(){}
+    public void postorder() {
+    }
 
     @Override
-    public void preorder(){}
+    public void preorder() {
+    }
+
+    @Override
+    public boolean isEmpty(){
+        return getSize() == 0;
+    }
 }
