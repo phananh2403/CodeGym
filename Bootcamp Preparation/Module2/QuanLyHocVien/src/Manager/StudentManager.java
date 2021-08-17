@@ -20,14 +20,20 @@ public class StudentManager {
 
     //xem DS
     public void showStudent() {
+        System.out.println("Student ID  |  Name  |  1st score  |  2nd score  |  3rd score  |  4th score  |  Average score");
         for (Student student : studentList) {
-            System.out.println("Student's ID: " + student.getId());
-            System.out.println("\nStudent's name: " + student.getName());
-            System.out.println("\nStudent's first score: " + student.getFirst_());
-            System.out.println("\nStudent's second score: " + student.getSecond_());
-            System.out.println("\nStudent's third score: " + student.getThird_());
-            System.out.println("\nStudent's fourth score: " + student.getFourth_());
-            System.out.println("\nStudent's average score: " + student.getDtb_());
+
+            System.out.println(student.getId() + "             " + student.getName() + "           " + student.getFirst_() + "           "
+                    + student.getSecond_() + "           " + student.getThird_() + "           "
+                    + student.getFourth_() + "           " + student.getDtb_());
+
+//            System.out.println("\nStudent's name: " + student.getName());
+//            System.out.println("\nStudent's first score: " + student.getFirst_());
+//            System.out.println("\nStudent's second score: " + student.getSecond_());
+//            System.out.println("\nStudent's third score: " + student.getThird_());
+//            System.out.println("\nStudent's fourth score: " + student.getFourth_());
+//            System.out.println("\nStudent's average score: " + student.getDtb_());
+
             System.out.println("--------------------------------------------------");
         }
     }
@@ -127,6 +133,10 @@ public class StudentManager {
 
     public void sortStudent() {
         Collections.sort(studentList, new SortStudent());
+    }
+
+    public void showStudentList() {
+        System.out.println(studentList.toString());
     }
 
     public int inputID() {
