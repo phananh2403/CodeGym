@@ -14,8 +14,8 @@ public class Main {
         boolean exit = false;
         StudentManager studentManager = new StudentManager();
         int studentID;
-        Menu();
         while (true){
+            Menu();
             choice = scanner.nextInt();
             switch (choice){
                 case 1:
@@ -44,17 +44,19 @@ public class Main {
                     System.exit(0);
             }
         }
+
     }
     public static void Menu(){
-        System.out.println("MENU");
-        System.out.println("1. Show student list.");
-        System.out.println("2. Add student.");
-        System.out.println("3. Edit student. ");
-        System.out.println("4. Delete student.");
-        System.out.println("5. Enter student's score.");
-        System.out.println("6. Edit student's score.");
-        System.out.println("7. Sort student list.");
-        System.out.println("0. Exit.");
-        System.out.println("Enter your choice!");
+        System.out.println("-----------------MENU-----------------");
+        System.out.println("|      1. Show student list.         |");
+        System.out.println("|      2. Add student.               |");
+        System.out.println("|      3. Edit student.              |");
+        System.out.println("|      4. Delete student.            |");
+        System.out.println("|      5. Enter student's score.     |");
+        System.out.println("|      6. Edit student's score.      |");
+        System.out.println("|      7. Sort student list.         |");
+        System.out.println("|      0. Exit.                      |");
+        System.out.println("|      Please enter your choice!     |");
+        System.out.println("--------------------------------------");
     }
 }
