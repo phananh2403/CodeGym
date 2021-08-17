@@ -5,10 +5,10 @@ import java.io.Serializable;
 public class Student implements Serializable {
     private int id;
     private String name;
-    private float first_; // điểm học viên lần 1
-    private float second_;// điểm học viên lần 2
-    private float third_; // điểm học viên lần 3
-    private float fourth_; // điểm học viên lần 4
+    private float first_ = 0.0F; // điểm học viên lần 1
+    private float second_ = 0.0f;// điểm học viên lần 2
+    private float third_ = 0.0f; // điểm học viên lần 3
+    private float fourth_ = 0.0f; // điểm học viên lần 4
     private float dtb_;
 
     public Student() {
