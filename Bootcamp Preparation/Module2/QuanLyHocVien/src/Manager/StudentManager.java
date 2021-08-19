@@ -23,7 +23,7 @@ public class StudentManager {
         System.out.println("Student ID  |  Name  |  1st score  |  2nd score  |  3rd score  |  4th score  |  Average score");
         for (Student student : studentList) {
 
-            System.out.println(student.getId() + "             " + student.getName() + "           " + student.getFirst_() + "           "
+            System.out.println("    " + student.getId() + "           " + student.getName() + "           " + student.getFirst_() + "           "
                     + student.getSecond_() + "           " + student.getThird_() + "           "
                     + student.getFourth_() + "           " + student.getDtb_());
 
@@ -34,7 +34,7 @@ public class StudentManager {
 //            System.out.println("\nStudent's fourth score: " + student.getFourth_());
 //            System.out.println("\nStudent's average score: " + student.getDtb_());
 
-            System.out.println("--------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------------------------------------");
         }
     }
 
@@ -51,14 +51,13 @@ public class StudentManager {
 //        }
 
         //Kiểm tra đầu vào của tên sinh viên.
-        Pattern pattern = Pattern.compile("\\d*");
-        Matcher matcher = pattern.matcher(name);
-        if (matcher.matches()) {
-            System.out.println("Name Is a Number");
-        } else {
-            System.out.println("Name Not a Number");
-        }
-
+//        Pattern pattern = Pattern.compile("\\d*");
+//        Matcher matcher = pattern.matcher(name);
+//        if (matcher.matches()) {
+//            System.out.println("Name Is a Number");
+//        } else {
+//            System.out.println("Name Not a Number");
+//        }
 
         float firstScore = inputFirst();
         float secondScore = inputSecond();
@@ -132,7 +131,7 @@ public class StudentManager {
     }
 
     public void sortStudent() {
-        Collections.sort(studentList, new SortStudent());
+        studentList.sort(new SortStudent());
     }
 
     public void showStudentList() {
@@ -153,7 +152,23 @@ public class StudentManager {
 
     public String inputName() {
         System.out.println("Enter Student's Name: ");
-        return scanner.nextLine();
+        //Kiểm tra đầu vào của tên sinh viên.
+        while (true){
+            try {
+                String name = scanner.nextLine();
+                Pattern pattern = Pattern.compile("[^a-z0-9 ]\\d*",Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(name);
+                boolean alert = matcher.find();
+                if (matcher.matches()){
+                    throw new Exception();
+                }
+                if(alert)
+                    throw new Exception();
+                return name;
+            } catch (Exception e){
+                System.out.println("There is a special character in Student's name,please enter again!");
+            }
+        }
     }
 
     public float inputFirst() {

@@ -63,7 +63,7 @@ public class Main {
 
     }
     public static  void fileInformation(){
-        File myObj = new File("student.txt");
+        File myObj = new File("D:\\CodeGym\\CodeGym\\Bootcamp Preparation\\Module2\\QuanLyHocVien\\student.txt");
         if (myObj.exists()) {
             System.out.println("File name: " + myObj.getName());
             System.out.println("Absolute path: " + myObj.getAbsolutePath());
@@ -76,7 +76,7 @@ public class Main {
     }
     public static void showData() throws Exception {
         try {
-            FileInputStream readData = new FileInputStream(new File("student.txt"));
+            FileInputStream readData = new FileInputStream(new File("D:\\CodeGym\\CodeGym\\Bootcamp Preparation\\Module2\\QuanLyHocVien\\student.txt"));
             ObjectInputStream readStream = new ObjectInputStream(readData);
             ArrayList<Student> studentArrayList = (ArrayList<Student>) readStream.readObject();
             readStream.close();
@@ -97,7 +97,7 @@ public class Main {
 
     }
     public static void Menu(){
-        System.out.println("-----------------MENU-----------------");
+        System.out.println("-------------STUDENT LIST-------------");
         System.out.println("|      1. Show student list.         |");
         System.out.println("|      2. Add student.               |");
         System.out.println("|      3. Edit student.              |");
